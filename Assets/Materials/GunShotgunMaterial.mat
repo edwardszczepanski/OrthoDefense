@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: LineRenderMaterial
+  m_Name: GunShotgunMaterial
   m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _EMISSIONMAP _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _LIGHTMAPPING_REALTIME
     _UVSEC_UV1
@@ -112,15 +112,15 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: 0.5
       data:
         first:
           name: _AlphaTestRef
-        second: .5
+        second: 0.5
       data:
         first:
           name: _Parallax
-        second: .0199999996
+        second: 0.02
       data:
         first:
           name: _ZWrite
@@ -173,19 +173,19 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: .970588148, g: .880715251, b: .378243923, a: .99999994}
+        second: {r: 0.97058815, g: 0.88071525, b: 0.37824392, a: 0.99999994}
       data:
         first:
           name: _Color
-        second: {r: 1, g: .908823967, b: .640999973, a: 1}
+        second: {r: 0, g: 1, b: 0.25517225, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+        second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
       data:
         first:
           name: _EmissionColorUI
-        second: {r: .970588207, g: .880715311, b: .378243953, a: 1}
+        second: {r: 0.9705882, g: 0.8807153, b: 0.37824395, a: 1}
       data:
         first:
           name: _EmissionColorWithMapUI
@@ -193,4 +193,4 @@ Material:
       data:
         first:
           name: _SpecularColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+        second: {r: 0.2, g: 0.2, b: 0.2, a: 1}

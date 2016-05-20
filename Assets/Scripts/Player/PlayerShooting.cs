@@ -8,6 +8,7 @@ public class PlayerShooting : MonoBehaviour
     //public int damagePerShot = 20;                  // The damage inflicted by each bullet.
     //public float timeBetweenBullets = 0.15f;        // The time between each shot.
     //public float range = 100f;                      // The distance the gun can fire.
+    public Material [] gunMaterials;
 
 
     float timer;                                    // A timer to determine when to fire.
@@ -34,13 +35,15 @@ public class PlayerShooting : MonoBehaviour
 		public float range;
 		public AudioSource gunShotClip;
 		public float accuracy;
+		public Material gunMaterial;
 
-		public GunClass (int _damage, float _time, float _range, AudioSource _audio, float accuracy) {
+		public GunClass (int _damage, float _time, float _range, AudioSource _audio, float accuracy, Material gunMaterial) {
 			damagePerShot = _damage;
 			timeBetweenBullets = _time;
     		range = _range;
 			gunShotClip = _audio;
 			this.accuracy = accuracy; 
+			this.gunMaterial = gunMaterial;
     	}
     }
 
@@ -60,9 +63,9 @@ public class PlayerShooting : MonoBehaviour
 
 		gunShotClips[2].volume = 0.8f;
 
-		gunList [0] = new GunClass (20, 0.15f, 32f, gunShotClips[0], 0.8f); // Rifle
-		gunList [1] = new GunClass (50, 0.8f, 15f, gunShotClips[1], 0.2f); // Shotgun
-		gunList [2] = new GunClass (200, 1.5f, 100f, gunShotClips[2], 1.1f); // Laser
+		gunList [0] = new GunClass (20, 0.15f, 32f, gunShotClips[0], 0.3f, gunMaterials[0]); // Rifle
+		gunList [1] = new GunClass (50, 0.8f, 15f, gunShotClips[1], 0.1f, gunMaterials[1]); // Shotgun
+		gunList [2] = new GunClass (200, 1.5f, 100f, gunShotClips[2], 0.55f, gunMaterials[2]); // Laser
 		gunType = Gun.Rifle;
     }
 
@@ -119,8 +122,8 @@ public class PlayerShooting : MonoBehaviour
 		currentDamage = gunList [(int)gunType].damagePerShot;
 		currentTime = gunList [(int)gunType].timeBetweenBullets;
 		currentRange = gunList [(int)gunType].range;
+		gunLine.material = gunList [(int)gunType].gunMaterial;
 	
-		gunLine.SetColors (Color.cyan, Color.green);
 		
 		// Reset the timer.
 		timer = 0f;
